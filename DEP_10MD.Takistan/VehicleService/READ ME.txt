@@ -1,0 +1,17 @@
+Service Station by Blitz
+Version 1.3.1
+License: http://www.armaholic.com/page.php?id=25882
+
+Usage:
+_nul = [vehicle player,<trigger name>]execVM "blz_service_station_V<x>.sqf";
+1. 	Put the blz_service_station_V<x>.sqf into your mission folder (Notice: <x> is a placeholder and have to be replaced with the version!)
+2.	Write "vehicle player in thisList" into the condition 
+3.	Replace <trigger name> with the name of the trigger
+4.	If you want the rotating option write "blz_turn" into the trigger text
+5.	Put the line starting with '_nul=...' with your replacements into 'on Activation' 
+6. 	Have Fun!
+
+
+Hint:
+The rotation option sets the direction of your vehicle equal to the direction of the trigger.
+(e.g. The azimuth of the trigger is 145°. Consequently the direction of the vehicle after the turn ist 145°)
