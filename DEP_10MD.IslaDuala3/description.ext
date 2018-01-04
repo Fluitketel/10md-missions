@@ -1,0 +1,88 @@
+#include "VVS\menu.h"
+
+class Params
+{
+    class DebugMode
+	{
+		title = "Debug Mode";
+		values[] = {1,0};
+		texts[] = {"Enabled","Disabled"};
+		default = 0;
+	};
+	class EnemyDensity
+	{
+		title = "Enemy density";
+		values[] = {0, 1, 2};
+		texts[] = {"Low", "Medium", "High"};
+		default = 2;
+	};
+    class Limited_Arsenal
+	{
+		title = "Limit arsenal";
+		values[] = {1,0};
+		texts[] = {"Enabled","Disabled"};
+		default = 0;
+	};
+    class DEP_AI_LOC
+	{
+		title = "Max amount of AI per location";
+		values[] = {10, 16, 20, 24, 30};
+		texts[] = {"10", "16", "20", "24", "30"};
+		default = 20;
+	};
+    class DEP_AI_TOT
+	{
+		title = "Max total amount of AI";
+		values[] = {250, 300, 350, 400};
+		texts[] = {"250", "300", "350", "400"};
+		default = 300;
+	};
+    class DEP_ACTDIST
+	{
+		title = "Activation distance";
+		values[] = {700, 800, 1000, 1200};
+		texts[] = {"700", "800", "1000", "1200"};
+		default = 800;
+	};
+	class DEP_SAFERADIUS
+    {
+        title = "Safe zone radius";
+        values[] = {400, 500, 600, 700};
+        texts[] = {"400", "500", "600", "700"};
+        default = 500;
+    };
+    class DEP_AIR
+    {
+        title = "Ambient air";
+        values[] = {1,0};
+		texts[] = {"Enabled","Disabled"};
+		default = 1;
+    };
+    class DEP_CIVILIANS
+    {
+        title = "Civilians";
+        values[] = {1,0};
+		texts[] = {"Enabled","Disabled"};
+		default = 0;
+    };
+	class DEP_MARKERS
+    {
+        title = "Objective markers";
+        values[] = {1,0};
+		texts[] = {"Enabled","Disabled"};
+		default = 0;
+    };
+    class daytime
+	{
+		title = "Time of day";
+		values[] = {5, 8, 12, 18, 20, 22};
+		texts[] = {"0500", "0800", "1200", "1800", "2000", "2200"};
+		default = 8;
+	};
+};
+
+class CfgFunctions
+{
+	#include "Arsenal\CfgFunctions.hpp"
+	#include "VVS\Functions.h"
+};
