@@ -21,6 +21,7 @@ _vehicleList = switch(_filter) do
 	case "Armored": {VVS_pre_Armored};
 	case "Autonomous": {VVS_pre_Autonomous};
 	case "Support": {VVS_pre_Support};
+	case "Quad": {VVS_pre_Quad};
 	default {[]};
 };
 

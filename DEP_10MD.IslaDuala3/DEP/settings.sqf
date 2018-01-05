@@ -111,6 +111,7 @@ dep_safe_zone = [
 // *************************************************************
 
 // Military forces
+/*
 // Iranian armed forces
 dep_u_soldier       = "LOP_IRAN_Infantry_Rifleman";
 dep_u_gl            = "LOP_IRAN_Infantry_Grenadier";
@@ -121,9 +122,21 @@ dep_u_aa            = "LOP_IRAN_Infantry_AA";
 dep_u_aaa           = "LOP_IRAN_Infantry_Rifleman";
 dep_u_sl            = "LOP_IRAN_Infantry_sergean";
 dep_u_marksman      = "LOP_IRAN_Infantry_Marksman";
-dep_u_sniper        = "LOP_IRAN_Infantry_AR_Asst";
+dep_u_sniper        = "LOP_IRAN_Infantry_AR_Asst";*/
+// African Militia
+dep_u_soldier       = "LOP_AFR_Infantry_Rifleman_4";
+dep_u_gl            = "LOP_AFR_Infantry_GL";
+dep_u_ar            = "LOP_AFR_Infantry_AR";
+dep_u_at            = "LOP_AFR_Infantry_AT";
+dep_u_medic         = "LOP_AFR_Infantry_Corpsman";
+dep_u_aa            = "LOP_AFR_Infantry_AT";
+dep_u_aaa           = "LOP_AFR_Infantry_AT";
+dep_u_sl            = "LOP_AFR_Infantry_SL";
+dep_u_marksman      = "LOP_AFR_Infantry_Marksman";
+dep_u_sniper        = "LOP_AFR_Infantry_Marksman";
 
 // Guerilla forces
+/*
 // Middle Eastern Militia
 dep_u_g_soldier     = "LOP_AM_Infantry_Rifleman_3";
 dep_u_g_gl          = "LOP_AM_Infantry_GL";
@@ -131,7 +144,15 @@ dep_u_g_ar          = "LOP_AM_Infantry_AR";
 dep_u_g_at          = "LOP_AM_Infantry_AT";
 dep_u_g_medic       = "LOP_AM_Infantry_Corpsman";
 dep_u_g_sl          = "LOP_AM_Infantry_SL";
-dep_u_g_marksman    = "LOP_AM_Infantry_Marksman";
+dep_u_g_marksman    = "LOP_AM_Infantry_Marksman";*/
+// African Militia
+dep_u_g_soldier     = "LOP_AFR_Infantry_Rifleman";
+dep_u_g_gl          = "LOP_AFR_Infantry_GL";
+dep_u_g_ar          = "LOP_AFR_Infantry_AR";
+dep_u_g_at          = "LOP_AFR_Infantry_AT";
+dep_u_g_medic       = "LOP_AFR_Infantry_Corpsman";
+dep_u_g_sl          = "LOP_AFR_Infantry_SL";
+dep_u_g_marksman    = "LOP_AFR_Infantry_Marksman";
 
 // Vehicles
 dep_civ_veh         = [

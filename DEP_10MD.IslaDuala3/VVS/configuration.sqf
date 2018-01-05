@@ -22,6 +22,8 @@ VVS_Ship = [];
 VVS_Armored = [];
 VVS_Autonomous = [];
 VVS_Support = [];
+VVS_pre_Quad = ["B_Quadbike_01_F"];
+
 
 // def 2015 09 19> Uncomment next comment-section /* */ if you want to make this s#$t work faster and predefined (for rhs).
 /*

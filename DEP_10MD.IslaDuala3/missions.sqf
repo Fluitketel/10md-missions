@@ -6,7 +6,7 @@ private ["_missionlocations", "_safe", "_inrange", "_buildings", "_spawnposition
 	Declare variables
 */
 
-m_mission_faction = "LOP_ISTS_OPF";
+m_mission_faction = "LOP_BH";
 m_missionradius = 300;
 
 m_missionstatus = "inactive";
