@@ -25,7 +25,7 @@ if (isNil "PARAMS_DebugMode") then {
     PARAMS_DebugMode = 0;
 };
 if (isNil "PARAMS_EnemyDensity") then {
-    PARAMS_EnemyDensity = 2;
+    PARAMS_EnemyDensity = 0;
 };
 if (isNil "PARAMS_DEP_AI_TOT") then {
     PARAMS_DEP_AI_TOT = 300;
@@ -51,12 +51,11 @@ if (isNil "PARAMS_DEP_MARKERS") then {
 if (isNil "PARAMS_daytime") then {
     PARAMS_daytime = 8;
 };
-if (isNil "PARAMS_Limited_Arsenal") then {
-    PARAMS_Limited_Arsenal = 1;
-};
 if (isNil "PARAMS_base_location") then {
     PARAMS_base_location = -1;
 };
+
+PARAMS_Limited_Arsenal = 0;
 
 // Initialize DEP
 [] execVM "DEP\init.sqf";
@@ -64,4 +63,12 @@ if (isNil "PARAMS_base_location") then {
 if (m_isserver) then {    
     [PARAMS_daytime] call BIS_fnc_paramDaytime;
 	[] execVM "missions.sqf";
+};
+
+if (m_isclient) then {
+    if (!isMultiplayer) then {
+        waitUntil {count ([player] call BIS_fnc_getRespawnPositions) > 0};
+        _spawnpositions = [player] call BIS_fnc_getRespawnPositions;
+        player setPos (getPos (_spawnpositions select 0));
+    };
 };

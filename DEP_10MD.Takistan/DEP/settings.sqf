@@ -48,13 +48,13 @@ dep_air_patrols = PARAMS_DEP_AIR;
 if (PARAMS_EnemyDensity == 2) then {
 	dep_housepop 		= 100;
 	dep_roadblocks 		= 16;
-	dep_aa_camps 		= 8;
-	dep_patrols 		= 16;
-	dep_bunkers 		= 25;
+	dep_aa_camps 		= 6;
+	dep_patrols 		= 15;
+	dep_bunkers 		= 20;
 	dep_military 		= 4;
-	dep_ambushes 		= 6;
+	dep_ambushes 		= 4;
 	dep_forest_patrols 	= 0;
-	dep_mortars 		= 2 + (round random 1);
+	dep_mortars 		= 1 + (round random 2);
 	dep_veh_chance 		= 1;
 	dep_town_occupation = 0.9;
 };
@@ -63,11 +63,11 @@ if (PARAMS_EnemyDensity == 2) then {
 if (PARAMS_EnemyDensity == 1) then {
 	dep_housepop 		= 80;
 	dep_roadblocks 		= 12;
-	dep_aa_camps 		= 5;
-	dep_patrols 		= 12;
-	dep_bunkers 		= 20;
+	dep_aa_camps 		= 4;
+	dep_patrols 		= 10;
+	dep_bunkers 		= 18;
 	dep_military 		= 3;
-	dep_ambushes 		= 4;
+	dep_ambushes 		= 3;
 	dep_forest_patrols 	= 0;
 	dep_mortars 		= 1 + (round random 1);
 	dep_veh_chance 		= 0.8;
@@ -84,7 +84,7 @@ if (PARAMS_EnemyDensity < 1) then {
 	dep_military 		= 2;
 	dep_ambushes 		= 2;
 	dep_forest_patrols 	= 0;
-	dep_mortars 		= round random 1;
+	dep_mortars 		= 1 + (round random 1);
 	dep_veh_chance 		= 0.7;
 	dep_town_occupation = 0.4;
 };
@@ -95,7 +95,8 @@ if (dep_debug) then {
 };
 
 dep_safe_zone = [
-    getMarkerPos "safezone1"
+    getMarkerPos "safezone1",
+    getMarkerPos "safezone2"
 ];
 
 

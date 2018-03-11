@@ -1,3 +1,5 @@
+#include "VVS\menu.h"
+
 class Params
 {
     class DebugMode
@@ -13,13 +15,6 @@ class Params
 		values[] = {0, 1, 2};
 		texts[] = {"Low", "Medium", "High"};
 		default = 2;
-	};
-    class Limited_Arsenal
-	{
-		title = "Limit arsenal";
-		values[] = {1,0};
-		texts[] = {"Enabled","Disabled"};
-		default = 1;
 	};
     class DEP_AI_LOC
 	{
@@ -81,5 +76,5 @@ class Params
 
 class CfgFunctions
 {
-	#include "Arsenal\CfgFunctions.hpp"
+	#include "VVS\Functions.h"
 };

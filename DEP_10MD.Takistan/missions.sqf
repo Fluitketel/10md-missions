@@ -1,6 +1,6 @@
 waitUntil {!isNil "dep_ready"};
 
-private ["_missionlocations", "_safe", "_inrange", "_buildings", "_spawnpositions", "_alive", "_canbealive", "_objdestroyed"];
+private ["_missionlocations", "_safe", "_inrange", "_buildings", "_spawnpositions", "_alive", "_canbealive"];
 
 /*
 	Declare variables
@@ -17,7 +17,6 @@ m_missiontask = "";
 m_mission_groups = [];
 m_mission_objects = [];
 m_mission_units = [];
-m_mission_destroy = objNull;
 
 m_missionmarker = createMarker ["MissionMarker", [0, 0 ,0]];
 m_missionmarker setMarkerShape "ELLIPSE";
@@ -149,22 +148,6 @@ while {true} do {
 		sleep 1;
 	};
 	
-	// Find a radio tower position
-	_valid = false;
-	_starttime = time;
-	while {!_valid} do {
-		_spawnpos = [(getPos m_mission), random (m_missionradius / 2), (random 360)] call BIS_fnc_relPos;
-		_spawnpos = _spawnpos isFlatEmpty [15, 0, 0.2, 12, 0, false];
-		if (count _spawnpos == 3) then {
-			m_mission_destroy = "Land_Com_tower_ep1" createVehicle _spawnpos;
-			m_mission_objects = m_mission_objects + [m_mission_destroy];
-			_valid = true;
-		};
-		if (!_valid && (time - _starttime) > 30) exitWith {
-			_valid = true;
-		};
-	};
-	
 	// Find building spawn positions
 	_buildings = [getPos m_mission, m_missionradius] call dep_fnc_enterablehouses;
 	_spawnpositions = [];
@@ -234,13 +217,7 @@ while {true} do {
 	_canbealive = round (_alive * 0.1);
 	while {m_missionstatus == "active"} do {
 		_alive = [] call m_fnc_alive_units;
-		_objdestroyed = true;
-		if (m_mission_destroy != objNull) then {
-			if (alive m_mission_destroy) then {
-				_objdestroyed = false;
-			};
-		};
-		if (_alive <= _canbealive && _objdestroyed) then {
+		if (_alive <= _canbealive) then {
 			[m_missiontask, "SUCCEEDED", true] call BIS_fnc_taskSetState;
 			m_missionmarker setMarkerAlpha 0;
 			sleep 120;
@@ -253,13 +230,6 @@ while {true} do {
 				} foreach (units _group);
 				deleteGroup _group;
 			} forEach m_mission_groups;
-			m_mission_groups = [];
-			
-			{
-				deleteVehicle _x;
-			} forEach m_mission_objects;
-			m_mission_objects = [];
-			m_mission_destroy = objNull;
 			
 			m_missionstatus = "inactive";
 		};
